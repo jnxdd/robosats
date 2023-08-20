@@ -71,6 +71,7 @@ class RobotTokenSHA256AuthenticationMiddleWare:
             # Let's create a new user & robot on-the-fly.
 
             # The first ever request to a coordinator must include cookies for the public key (and encrypted priv key as of now).
+            # print(request.META)
             public_key = request.COOKIES.get("public_key")
             encrypted_private_key = request.COOKIES.get("encrypted_private_key", "")
 
